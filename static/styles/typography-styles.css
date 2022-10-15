@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100;300;400;600&family=Roboto:wght@100;300;400;500;700&display=swap');
+
+:root{
+    --regular-typography:'Roboto';
+    --highlight-typography:'Overpass';
+
+    --bold:600;
+    --semi-bold:500;
+    --regular:400;
+    --light:300;
+    --thin:100;
+}
+
+h1{
+    margin: 0;
+}
+
+p{
+    margin: 0;
+}
+
+.reminder-deadline-txt{
+    font-size: 35px;
+    font-weight: var(--bold);
+    font-family: var(--highlight-typography),sans-serif;
+}
+
+.remider-title-txt{
+    font-size: 35px;
+    font-weight: var(--light);
+    font-family: var(--regular-typography);
+}
+.reminder-task-txt{
+    font-size: 35px;
+    font-weight: var(--thin);
+    font-family: var(--regular-typography);
+}
+.extra-txt {
+    font-size: 20px;
+    font-weight: var(--semi-bold);
+    font-family: var(--regular-typography);
+}
+.icon-reminder-style {
+    font-size: 35px;
+    color: #006aff;
+}
+.icon-reminder-deactivated-style {
+    font-size: 35px;
+    color:#89A5B3;
+}

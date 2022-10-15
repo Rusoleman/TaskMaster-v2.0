@@ -1,0 +1,48 @@
+{% load widget_tweaks %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="{% static 'styles/main.css' %}" rel="stylesheet">
+    <link href="{% static 'styles/components-styles.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="/static/svg/python-5.svg">
+    <title>Task | {{task.title}}</title>
+</head>
+<body>
+    {% block content %}
+        <div class="row">
+            <div class="col-lg-10">
+                <div class="card"> 
+                    <div class="card-body">
+                        <h1>{{task.title}}</h1>
+                        {{error}}
+                        <form method="POST">
+                            {% csrf_token %}
+                            <br>
+                            <label for="exampleFormControlInput1" class="form-label">Task Name</label>
+                            <div class="mb-3">
+                                {% render_field form.title type="text" class="form-control"%}
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                                {% render_field form.description class="form-control" %}
+                            </div>
+                            {% render_field form.priority class="form-control" %}
+                            {% render_field form.status class="form-control" %}
+                            <br />
+                            <button class=" btn-circle">
+                                <i class="ri-check-double-line"></i>
+                            </button>
+                        </form>    
+                    </div>
+                </div>
+            </div>
+        </div>   
+    {% endblock %}
+</body>
+</html>

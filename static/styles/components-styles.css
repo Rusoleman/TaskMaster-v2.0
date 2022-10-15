@@ -1,0 +1,110 @@
+:root{
+    --delete:#dc3545;
+    --update:#0d6efd;
+    --upade-hover-effect:#1a83bc;
+    --text-button:ivory;
+    --priority-bg:#FCFF90;
+    --add-bg:#90ECFF;
+    --status-bg:#AEFAD3;
+}
+
+li {
+    list-style: none;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-add {
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    border: none;
+    background: var(--add-bg);
+}
+
+.btn-update {
+    
+    background: var(--add-bg);
+    border: none;
+}
+
+.priority-block {
+    height: 30px;
+    padding: .5rem;
+    width: auto;
+    border-radius: 8px;
+    background-color: var(--priority-bg);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.add-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-left: 1%;
+}
+
+.status-block {
+    background: var(--status-bg);
+    height: auto;
+    width:120px;
+    border-radius: 5px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.elements-container {
+    display: flex;
+
+}
+
+.deadline-container {
+    width: 11.5%;
+    
+}
+
+.main-reminder-container{
+    width: 450px;
+    justify-content: center;
+    align-items: center;
+}
+.main-reminder-1 {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+}
+hr {
+    margin:0;
+}
+
+.icon-container {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 80%;
+}
+.finished-block {
+    background: #A0FFD3;
+    width: 100px;
+    height: auto;
+    border-radius: 7px;
+}
+
+.main-container{
+    justify-content: center;
+    display: flex;
+    margin: auto;
+}
+

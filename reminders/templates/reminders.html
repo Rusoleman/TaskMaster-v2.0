@@ -1,0 +1,97 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="{% static 'styles/main.css' %}" rel="stylesheet">
+    <link href="{% static 'styles/typography-styles.css' %}" rel="stylesheet">
+    <link href="{% static 'styles/components-styles.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="/static/svg/python-5.svg">
+    <title>Reminders</title>
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    {% block content %}
+    <div class="container-lg">
+        <div style="margin-bottom:1%;">
+            <h1>Reminders</h1>
+            <div class="add-container">
+                <button class="btn-circle btn-add">
+                    <a style="color:ivory;" class="button-text" href="{% url 'add_reminder' %}">
+                        <i style="font-size: 400%;" class="ri-add-fill"></i>
+                    </a>
+                </button>
+            </div>
+        </div>
+        <hr/>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                {% for reminder in reminders %}
+                    <div>
+                        <ul style="margin-top:1.5%; margin-bottom: 0;" class="d-flex">
+                            <li class=" deadline-container">
+                                <p class="reminder-deadline-txt">{{reminder.deadline_date}}</p>
+                                <hr>
+                                <p class="reminder-deadline-txt">{{reminder.deadline_time}}</p>
+                            </li>
+                            <li class="main-container">
+                                <div class="main-reminder-container">
+                                    <div class="main-reminder-1">
+                                        <h4 class="remider-title-txt">{{reminder.title}}</h4>
+                                        <hr>
+                                    </div>
+                                    <div class="main-reminder-1">
+                                        <p style="margin-bottom:0;" class="extra-txt">from</p>
+                                    </div>
+                                    <div class="reminder-task-txt main-reminder-1">
+                                        <span>"</span>
+                                        <span>{{reminder.task}}</span>
+                                        <span>"</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li style="margin-left: 2%;">
+                                <div style="padding-top:15%;">
+                                    <div class="finished-block main-reminder-1">
+                                        <p>{{reminder.finished_on_date}}</p>
+                                        <hr>
+                                        <p>{{reminder.finished_on_time}}</p>
+                                    </div>
+                                    {% if reminder.state == True %}
+                                        <div class="main-reminder-1"><i class="ri-notification-4-fill icon-reminder-style"></i></div>
+                                    {% else %}
+                                        <div class="main-reminder-1"><i class="ri-notification-off-fill icon-reminder-deactivated-style "></i></div>
+                                    {% endif %}
+                                </div>
+                            </li>
+                            <li style="margin-left: 2%;">
+                                <div class="icon-container ">
+                                    <a href="{% url 'update_reminder' reminder.id %}">
+                                        <i class="ri-edit-box-line icon-reminder-style"></i>
+                                    </a>
+                                    <a href="{% url 'remove_reminder' reminder.id %}">
+                                        <i class="ri-close-fill icon-reminder-deactivated-style" style="color:#dc3545;"></i>
+                                    </a>
+                                </div>
+                                
+                            </li>
+                        </ul>
+
+                    </div> 
+                    <br>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

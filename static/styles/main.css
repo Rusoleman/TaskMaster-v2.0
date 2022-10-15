@@ -1,0 +1,50 @@
+:root{
+    --delete:#dc3545;
+    --update:#0d6efd;
+    --upade-hover-effect:#1a83bc;
+    --text-button:ivory;
+    --priority-bg:#FCFF90;
+    --add-bg:#90ECFF;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+    color:var(--text-button);
+}
+
+
+.custom-list {
+    display: flex;
+    padding: 0;
+    margin:0;
+}
+
+.list-item {
+    list-style: none;
+}
+
+.adjust-item {
+    padding-right: 10%;
+}
+
+.button-text{
+    color:var(--text-button)
+}
+
+.delete-style {
+    background-color: var(--delete);
+}
+
+.update-style {
+    background-color: var(--update);
+}
+.update-style:hover{
+    transition-duration: .3s;
+    transform: translateY(-15%);
+}
