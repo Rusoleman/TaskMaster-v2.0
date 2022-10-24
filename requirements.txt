@@ -1,0 +1,6 @@
+Django==3.2.4
+django-environ==0.8.1
+django-widget-tweaks==1.4.12
+djangorestframework==3.12.4
+djangorestframework-simplejwt==4.7.1
+

@@ -9,6 +9,11 @@
     --regular:400;
     --light:300;
     --thin:100;
+
+    --icon-reminder-txtc:#006aff;
+    --deactivate-icon-reminder-txtc:#89A5B3;
+    --main-txtc:black;
+    --main-button-txtc:ivory;
 }
 
 h1{
@@ -20,7 +25,12 @@ p{
 }
 
 .reminder-deadline-txt{
-    font-size: 35px;
+    font-size: 30px;
+    font-weight: var(--bold);
+    font-family: var(--highlight-typography),sans-serif;
+}
+.reminder-deadline-time-txt{
+    font-size: 20px;
     font-weight: var(--bold);
     font-family: var(--highlight-typography),sans-serif;
 }
@@ -34,6 +44,7 @@ p{
     font-size: 35px;
     font-weight: var(--thin);
     font-family: var(--regular-typography);
+    color:var(--main-txtc) ;
 }
 .extra-txt {
     font-size: 20px;
@@ -42,9 +53,22 @@ p{
 }
 .icon-reminder-style {
     font-size: 35px;
-    color: #006aff;
+    color: var(--icon-reminder-txtc);
 }
 .icon-reminder-deactivated-style {
     font-size: 35px;
-    color:#89A5B3;
+    color:var(--deactivate-icon-reminder-txtc);
+}
+.return-to-tasks-txt {
+    font-size: 20px;
+    font-family: var(--regular-typography);
+    font-weight: var(--light);
+}
+a.return-to-tasks-txt:hover{
+    color: var(--main-button-txtc);
+}
+.icon-tasks {
+    font-size: 22px;
+    color:var(--main-button-txtc);
+    padding-right:5px;
 }
